@@ -56,6 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: RefreshIndicator(
         child: ListView.builder(
           controller: scrollController,
+          itemCount: datas.length + 1,
           itemBuilder: (BuildContext context, int index) {
             if (index < datas.length) {
               return ListTile(
@@ -70,7 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             );
           },
-          itemCount: datas.length + 1,
         ),
         onRefresh: () async {
           datas
